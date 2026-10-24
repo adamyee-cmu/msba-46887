@@ -12,7 +12,7 @@ uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
 
-    Preview Data
+    # Preview Data
     st.subheader("1. Data Preview")
     st.dataframe(df.head(10))
 
@@ -62,7 +62,7 @@ if uploaded_file:
 
         st.write(f"### Fitted Regression Plot (R² Score: {r2_score:.2f})")
 
-        # Scatterplot with 
+        # Scatterplot with
         try:
             # Ensure clean numeric columns with no NaN values for trendline fitting
             plot_df = df[[features[0], target, features[1]]].dropna()
